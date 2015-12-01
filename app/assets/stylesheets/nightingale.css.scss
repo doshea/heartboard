@@ -1,0 +1,77 @@
+$nt-green: #26B8AE;
+// $nt-bg-grey: #F2F2F2;
+$nt-bg-grey: #E8E8E8;
+$nt-yellow: #E3C511;
+$nt-grey: #B0B0B0;
+
+$portrait-dim: 5em;
+$portrait-border-width: 0.1em;
+$portrait-frame-width: 0.3em;
+$portrait-border-color: #ccc;
+
+$severity-yellow: #EECE34;
+$severity-grey: #D0D1D2;
+$severity-dim: 0.6em;
+
+@mixin radius($amount){
+  -webkit-border-radius: $amount;
+  -moz-border-radius: $amount;
+  border-radius: $amount;
+}
+
+@mixin nt-inset {
+  background-color: white;
+  @include radius(0.25em);
+}
+
+@mixin shadow($amount){
+  -webkit-box-shadow: $amount;
+  -moz-box-shadow: $amount;
+  -o-box-shadow: $amount;
+  box-shadow: $amount;
+}
+
+body {
+  background-color: $nt-bg-grey !important;
+}
+.container-fluid {
+  h4, h6 {
+  color: $nt-grey;
+  }
+}
+
+.characteristic {
+  color: $nt-green;
+  font-weight: bold;
+}
+#quickbox {
+  @include nt-inset;
+  padding: 0.5em 0;
+}
+.portrait-frame {
+  padding: $portrait-frame-width;
+  width: $portrait-dim + 2*$portrait-frame-width+$portrait-border-width;
+  height: $portrait-dim + 2*$portrait-frame-width+$portrait-border-width;
+  @include radius(50%);
+  background: whitesmoke;
+  border: $portrait-border-width solid $portrait-border-color;
+}
+.portrait {
+  @include radius(50%);
+  width: $portrait-dim;
+  height: $portrait-dim;
+  background: white;
+  border: $portrait-border-width solid $portrait-border-color;
+}
+
+.severity-dot {
+  @include radius(50%);
+  @include shadow($severity-dim * -0.07 $severity-dim * -0.07 $severity-dim / 10 #333);
+  background: $severity-grey;
+  width: $severity-dim;
+  height: $severity-dim;
+  display: inline-block;
+  &.filled {
+    background: $severity-yellow;
+  }
+}

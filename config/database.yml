@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: heart_board_development
+
+test:
+  <<: *default
+  database: heart_board_test
+
+production:
+  <<: *default
+  database: heart_board_production
+  username: heart_board
+  password: <%= ENV['HEALTH_BOARD_DATABASE_PASSWORD'] %>
