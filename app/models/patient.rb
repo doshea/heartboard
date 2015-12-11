@@ -26,6 +26,7 @@
 
 class Patient < ActiveRecord::Base
   has_many :appointments
+  has_many :providers, through: :appointments
   belongs_to :user
   belongs_to :guardian, class_name: 'Patient'
   has_many :wards, class_name: 'Patient', foreign_key: 'guardian_id'

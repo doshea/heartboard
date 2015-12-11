@@ -11,6 +11,7 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
+gem 'draper'
 
 gem 'turbolinks'
 

@@ -13,6 +13,8 @@
 
 class Provider < ActiveRecord::Base
   belongs_to :user
+  has_many :appointments
+  has_many :patients, through: :appointments
   has_and_belongs_to_many :departments
   has_many :locations, through: :departments
 end
