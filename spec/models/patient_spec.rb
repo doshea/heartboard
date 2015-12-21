@@ -20,6 +20,8 @@
 #  state            :string
 #  zip_code         :integer
 #  user_id          :integer
+#  guardian_id      :integer
+#  pcp_id           :integer
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #

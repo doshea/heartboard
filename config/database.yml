@@ -5,14 +5,14 @@ default: &default
 
 development:
   <<: *default
-  database: heart_board_development
+  database: nightingale_development
 
 test:
   <<: *default
-  database: heart_board_test
+  database: nightingale_test
 
 production:
   <<: *default
-  database: heart_board_production
-  username: heart_board
+  database: nightingale_production
+  username: nightingale
   password: <%= ENV['HEALTH_BOARD_DATABASE_PASSWORD'] %>

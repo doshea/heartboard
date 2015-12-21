@@ -55,6 +55,13 @@ gene.patient = Patient.create(
   street_address: '17 Daws Road', street_address_2: 'Apt 101', city: 'Portland', state: 'OR',
   zip_code: 10001,
 )
+dr_venktaraman = User.create(
+  first_name: 'Joseph', last_name: 'Venktaraman',
+  username: 'venktaramanj',
+  email: 'venktaramanj@ashby.org',
+  password: 'qwerty123456', password_confirmation: 'qwerty123456'
+  )
+dr_venktaraman.provider = Provider.create
 
 ellen = User.create(
   first_name: 'Ellen', last_name: 'Ross',
@@ -71,13 +78,11 @@ gene.patient.wards << ellen.patient = Patient.create(
   allergies: {penicillin: {severity: 4, symptoms: 'hives'}, codeine: {severity: 3, symptoms: 'shortness of breath'}, bee_stings: {severity: 5, symptoms: 'anaphylactic shock'}},
   phone_number: '4155551229',
   street_address: '17 Daws Road', street_address_2: 'Apt 101', city: 'Portland', state: 'OR',
-  zip_code: 10001,
+  zip_code: 10001, pcp: dr_venktaraman.provider
   )
 
-dr_venktaraman = User.create(
-  first_name: 'Joseph', last_name: 'Venktaraman',
-  username: 'venktaramanj',
-  email: 'venktaramanj@ashby.org',
-  password: 'qwerty123456', password_confirmation: 'qwerty123456'
+gall_bladder_app1 = Appointment.create(
+  subject: 'Gall Bladder Surgery', provider: dr_venktaraman.provider,
+  patient: ellen.patient, department: ashby_primary,
+  scheduled_time: DateTime.new(2012,3,2,9)
   )
-dr_venktaraman.provider = Provider.create

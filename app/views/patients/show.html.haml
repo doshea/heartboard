@@ -17,8 +17,8 @@
         is #{@patient.ethnicity.indefinite_article}
         %span.characteristic #{@patient.ethnicity} #{@user.sex}
         who speaks
-        %span.characteristic= @patient.language
-        \.
+        = succeed '.' do
+          %span.characteristic= @patient.language
       .col-md-12
         %h6 ADDRESS
         %p= @patient.address
@@ -35,19 +35,8 @@
             %span.glyphicon.glyphicon-triangle-bottom{aria: {hidden: true}}
         .row
           %hr
-        .row
-          %ul.list-unstyled
-            - @patient.allergies.each do |k, v|
-              %li
-                .col-sm-6.characteristic= k.titleize
-                .col-sm-6
-                  - severity = v['severity']
-                  - (0...severity).each do
-                    .severity-dot.filled
-                  - (0...(5-severity)).each do
-                    .severity-dot.empty
-                .col-sm-6= v['symptoms']
-                .col-sm-6= severity_to_s(severity)
+        .row= @patient.allergy_list
+          
         .row
           %hr
         .row
@@ -58,4 +47,20 @@
             %span.glyphicon.glyphicon-triangle-bottom{aria: {hidden: true}}
         .row
           %hr
+        .row
+          %ul.list-unstyled
+            %li.row
+              .col-md-12.characteristic= @patient.pcp.name
+              .col-md-12 Primary Care Doctor
+              .col-md-12 ASHBY MEDICAL CENTER
+              .col-md-12
+                %p
+                  1002 Healthcare Dr
+                  %br
+                  Portland, OR 97349
+              .col-md-12 (415) 555-1200
+        .row
+          %hr
+
+
   .col-md-9

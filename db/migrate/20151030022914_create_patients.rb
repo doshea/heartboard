@@ -25,6 +25,7 @@ class CreatePatients < ActiveRecord::Migration
 
       t.belongs_to :user
       t.belongs_to :guardian
+      t.belongs_to :pcp
 
       t.timestamps null: false
     end

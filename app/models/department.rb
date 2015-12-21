@@ -14,4 +14,5 @@ class Department < ActiveRecord::Base
   belongs_to :location
 
   has_and_belongs_to_many :providers
+  has_many :appointments
 end

@@ -7,6 +7,7 @@ gem 'puma' # Use Puma as the app server TODO may need more work https://devcente
 
 gem 'bootstrap-sass'
 gem 'sass-rails'
+gem 'inline_svg'
 
 gem 'uglifier'
 gem 'coffee-rails'

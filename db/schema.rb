@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20151128055448) do
     t.datetime "scheduled_time"
     t.integer  "provider_id"
     t.integer  "patient_id"
+    t.integer  "department_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
@@ -66,6 +67,7 @@ ActiveRecord::Schema.define(version: 20151128055448) do
     t.integer  "zip_code"
     t.integer  "user_id"
     t.integer  "guardian_id"
+    t.integer  "pcp_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end

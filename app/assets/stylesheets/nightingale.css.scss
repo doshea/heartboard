@@ -37,6 +37,7 @@ $severity-dim: 0.6em;
 }
 
 body {
+  padding-top: 4em !important;
   background-color: $nt-bg-grey !important;
 }
 .container {
@@ -91,11 +92,8 @@ body {
   &.filled {
     background: $severity-yellow;
   }
+  margin-left: 0.2em;
 }
-
-.hug {padding: 0 !important;}
-.hug-left {padding-left: 0 !important;}
-.hug-right {padding-right: 0 !important;}
 
 .inset-counter {
   @include radius(0.4em);
@@ -123,7 +121,17 @@ hr {
     color: $nt-text-ltgrey;
   }
 }
+.sev-dots {
+  text-align: right;
+  padding-left: 0 !important;
+}
+.sev-desc {
+  text-align: right;
+}
 #allergies, #contacts {
+  li.row {
+    margin-bottom: 1em;
+  }
   .col-md-9 {
     padding-right: 0;
     padding-left: 0.25em;
@@ -136,5 +144,8 @@ hr {
   }
   h5 {
     margin: 0.2em 0;
+  }
+  hr {
+    margin: 0.5em 0;
   }
 }
