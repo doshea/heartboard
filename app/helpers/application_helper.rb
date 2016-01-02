@@ -12,4 +12,16 @@ module ApplicationHelper
       'severe'
     end
   end
+
+  def title(s, override=false)
+    content_for(:title){override ? s : "#{s} | Nightingale"}
+  end
+
+  def title_backup
+    if content_for? :title
+      return nil
+    else
+      'Nightingale'
+    end
+  end
 end
